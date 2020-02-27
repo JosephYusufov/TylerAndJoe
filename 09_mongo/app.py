@@ -10,10 +10,9 @@ restaurants = db.restaurants
 restaurants.delete_many({})
 
 def findByZip(zip): 
-        print(restaurants.find({"zip" : zip}))        
-        #print(command) 
+        for restaurant in restaurants.find({"address.zipcode" : str(zip)}):
+                print(restaurant)        
 
-
-findByZip(1)     
+findByZip(10282)    
 #print(result)
 # pprint(posts.find_one())
