@@ -10,8 +10,8 @@ restaurants = db.restaurants
 
 
 def findByZip(zip): 
-    print(restaurants.find({"zip" : zip}))        
-    #print(command) 
+        for restaurant in restaurants.find({"address.zipcode" : str(zip)}):
+                print(restaurant)        
 
     
 def findByBorough(borough):
